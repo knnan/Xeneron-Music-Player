@@ -18,5 +18,8 @@
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^5.0.8"
+  },
+  "dependencies": {
+    "music-metadata": "^4.2.1"
   }
 }

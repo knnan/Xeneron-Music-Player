@@ -1,0 +1,245 @@
+ * {
+     margin: 0 px;
+     padding: 0 px;
+ }
+
+ .musiccom {
+     margin: 30px 50px;
+     object-fit: contain;
+     padding: 20px;
+     overflow: auto;
+ }
+
+ h1 {
+     background-color: orange;
+ }
+
+ body {
+     margin: auto;
+     background-color: #191927;
+ }
+
+ .track-info {
+     color: rgba(245, 245, 245, 0.829);
+     height: 65px;
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     font-size: 11px;
+     font-weight: lighter;
+     display: block;
+     white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
+ }
+
+ h5 {
+     margin: 0;
+     overflow: hidden;
+     color: rgba(231, 216, 216, 0.808);
+     padding-left: 10px;
+     padding-top: 3px;
+     font-weight: lighter;
+     padding-bottom: 3px;
+ }
+
+ p {
+     color: rgb(250, 250, 250);
+     font-weight: light;
+     margin: 0;
+     padding-left: 10px;
+     overflow: hidden;
+ }
+
+ .musiccontainer {
+     display: inline-block;
+     width: 150px;
+     margin: 10px;
+     height: 240px;
+ }
+
+ .imagecontainer {
+     display: inline-block;
+     overflow: hidden;
+     background-color: bluesviolet;
+     width: 150px;
+     height: 160px;
+     margin: 10px;
+     border-radius: 6px;
+ }
+
+ img {
+     width: 100%;
+     height: 100%;
+ }
+
+ .trackcontrol {
+     display: inline;
+     background-color: rgb(83, 43, 226);
+     color: white;
+     border-radius: 5px;
+     border: none;
+     padding: 5px 10px;
+     margin: 5px 10px;
+     outline: none;
+ }
+
+ .trackcontrol:hover {
+     background-color: rgb(40, 40, 119);
+ }
+
+ .infotext {
+     display: inline-block;
+     width: 100%;
+     height: 40px;
+     font-family: 'Roboto', sans-serif;
+     background-color: rgba(255, 255, 255, 0);
+     background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0), rgba(0, 0, 0, .8));
+     font-size: 15px;
+     color: white;
+     white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
+     position: relative;
+     padding-top: 10px;
+     text-align: center;
+     bottom: 40px;
+     text-shadow: 2px 2px 4px #000000;
+ }
+
+ .grid-container {
+     display: grid;
+     grid-template-columns: 200px 1fr;
+     grid-template-rows: 300px 1fr 50px;
+     grid-template-areas: "sidenav header" "sidenav main" "sidenav footer";
+     height: 100vh;
+     border: 1px splid black;
+ }
+
+ i {
+     padding: 5px;
+ }
+
+ .listinfo {
+     /* display: inline-block; */
+     position: relative;
+     bottom: 6px;
+     /* padding-top: 0px; */
+     /* float: top; */
+ }
+
+ .header {
+     grid-area: header;
+     background-color: #191927b9;
+     z-index: 1;
+     width: 100%;
+     position: fixed;
+     height: 50px;
+ }
+
+ .sidenav {
+     grid-area: sidenav;
+     background-color: #262538;
+     z-index: 2;
+ }
+
+ .main {
+     grid-area: main;
+     /* background-color: #191927; */
+     background-color: #191927;
+ }
+
+ .footer {
+     position: fixed;
+     width: 100%;
+     grid-area: footer;
+     background-color: rgba(45, 45, 61, 0.973);
+     bottom: 0;
+     height: 70px;
+     z-index: 3;
+ }
+
+ .sidenav__list {
+     position: fixed;
+     padding: 0;
+     margin-top: 85px;
+     list-style-type: none;
+ }
+
+ .sidenav__list-item {
+     letter-spacing: 1px;
+     text-align: justify;
+     padding: 5px 20px 10px 40px;
+     color: #4A495C;
+     font-family: 'Noto Sans KR', sans-serif;
+     font-size: 13px;
+     font-weight: lighter;
+ }
+
+ .sidenav__list-item:hover {
+     cursor: pointer;
+     color: rgb(255, 87, 65);
+ }
+
+ #now-playing {
+     width: 60px;
+     display: inline-block;
+     height: 60px;
+     margin: 5px;
+     overflow: hidden;
+     white-space: nowrap;
+     text-overflow: ellipsis;
+     border-radius: 5px;
+ }
+
+ #now-playing-img {
+     border-radius: 10px;
+ }
+
+ #nowplayinginfo {
+     padding: 10px;
+     position: fixed;
+     margin-top: 2px;
+     font-family: 'Noto Sans KR', sans-serif;
+     display: inline-block;
+     font-weight: 400;
+     font-size: 15px;
+     color: rgba(255, 255, 255, 0.884);
+     white-space: nowrap;
+     text-overflow: ellipsis;
+     width: 200px;
+     height: 200px;
+ }
+
+ #playercontrols {
+     display: inline-block;
+     position: fixed;
+     width: 500px;
+     height: 200px;
+     margin-left: 230px;
+     color: white;
+     /* background-color: #fff; */
+ }
+
+ #playercontrols span {
+     display: inline-block;
+     margin: 10px 20px;
+ }
+
+ a:visited {
+     color: rgb(218, 106, 65);
+ }
+
+ .playercontrolbutton {
+     outline: none;
+     border: none;
+     background: none;
+     color: #fff;
+ }
+
+ i:hover {
+     color: coral;
+     cursor: pointer;
+ }
+
+ #idtrack {
+     display: none;
+ }

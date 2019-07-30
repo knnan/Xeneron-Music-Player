@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Xeneron</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+    <div class="grid-container">
+        <header class="header">
+
+            <div style="display: inline-block;margin-left:270px;">
+                <span style="display:inline-block;"><i style="color:rgba(255, 255, 255, 0.644) ;"
+                        class="material-icons">
+                        search
+                    </i>
+                </span>
+
+            </div>
+            <div style="display:inline-block;width:300px;position:fixed;padding:6px;">
+                <input style="display:inline;background-color: #19192710;letter-spacing:1px;
+                color:grey;
+            outline:none;border:none;width :100%;height:80%" type="text" name="search"
+                    placeholder="search for songs tracks,albums,artists" id="">
+            </div>
+        </header>
+        <aside class="sidenav">
+            <ul class="sidenav__list">
+                <li class="sidenav__list-item">
+                    <div>
+                        <span>
+                            <i class="material-icons">
+                                home
+                            </i>
+                        </span>
+                        <a class="listinfo">
+                            Home
+                        </a>
+                    </div>
+                </li>
+                <li class="sidenav__list-item">
+
+                    <div>
+                        <span>
+                            <i class="material-icons">queue_music</i>
+                        </span>
+                        <a class="listinfo">
+                            Browse
+                        </a>
+                    </div>
+
+                </li>
+                <li class="sidenav__list-item">
+                    <div>
+                        <span>
+                            <i class="material-icons">playlist_play</i>
+                        </span>
+                        <a class="listinfo">
+                            Playlist
+                        </a>
+                    </div>
+                </li>
+                <li class="sidenav__list-item">
+                    <div>
+                        <span>
+                            <i class="material-icons">new_releases</i>
+                        </span>
+                        <a class="listinfo">
+                            Discover
+                        </a>
+                    </div>
+                </li>
+                <li class="sidenav__list-item">
+                    <div>
+                        <span>
+                            <i class="material-icons md-24">favorite_border</i>
+                        </span>
+                        <a class="listinfo">
+                            Favorites
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </aside>
+        <main class="main">
+
+            <audio id="musicaudio">
+                <source src="/media/knnan/New Volume/Music/6 Foot 7 Foot.mp3" />
+            </audio>
+            <div class="musiccom">
+
+
+            </div>
+
+
+
+        </main>
+        <footer class="footer">
+            <div id="now-playing">
+                <img id="nowplaying-img"
+                    src="https://wallup.net/wp-content/uploads/2017/11/17/185316-Hardwell-United_We_Are-music-cover_art-DJ-United_We_Are_album_cover-Revealed_Recordings-748x748.jpg"
+                    alt="no imgage">
+
+            </div>
+            <div id="nowplayinginfo">
+                <p>Its good to be bad</p>
+                <h5>Martin ruth</h5>
+            </div>
+            <div id="playercontrols">
+                <button onclick="prevsong()" class="playercontrolbutton">
+
+                    <span>
+                        <i class="material-icons">
+                            fast_rewind
+                        </i>
+                    </span>
+                </button>
+                <button class="playercontrolbutton" onclick="changplayicon()">
+                    <span>
+                        <i id="play-pause" class="material-icons">
+                            play_circle_outline
+
+                        </i>
+                    </span>
+
+                </button>
+                <button onclick="nextsong()" class="playercontrolbutton">
+
+                    <span>
+                        <i class="material-icons">
+                            fast_forward
+                        </i>
+                    </span>
+
+                </button>
+            </div>
+            <span id="idtrack">456</span>
+        </footer>
+    </div>
+
+
+    <script src='./renderer.js'></script>
+</body>
+
+</html>
