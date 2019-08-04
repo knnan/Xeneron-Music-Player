@@ -5,11 +5,42 @@ const electron = require('electron')
 const { ipcRenderer } = electron;
 const fs = require('fs');
 console.log(__dirname);
-
+var index = 0;
 ipcRenderer.send('getfiles');
 htmlout = '';
 musicdiv = document.querySelector('.musiccom');
+ipcRenderer.on('asynchronous-reply', (event, element) =>
+{
+    htmlout = `
+        <div id="musiccontainerno${index}" class="musiccontainer">
+        
+        <div class="imagecontainer">
+        
+        <img id="trackimgno${index}" src="data:image/png;base64,${element.common.picture[ 0 ].data}"
+        alt="Cover art">
+        
+        </div>
+        <div class="track-info">
+        <p>${element.common.title}</p>
+        <h5>${element.common.artist}</h5>
+        <button class="trackcontrol" id="${index}" onclick="startsong(this.id)">play</button>
+        <button class="trackcontrol" id="stop${index}" onclick="stopsong(this.id)">stop</button>
+        </div>
+        <div>
+        
+        </div>
+        </div>
+        `
+    var g = document.createElement('div');
+    g.id = `musiccontainerno${index}`
+    g.setAttribute("class", "musiccontainer")
 
+    g.innerHTML = htmlout
+    musicdiv.appendChild(g);
+    index++;
+    // console.log(arg) // prints "pong"
+})
+ipcRenderer.send('asynchronous-message', 'ping')
 
 
 ipcRenderer.on('secretmessage', function (e, data)
@@ -74,7 +105,7 @@ function startsong (clicked)
 
         musicid = `music_playerid${clicked}`;
         document.getElementById('play-pause').innerText = "pause_circle_outline";
-        player.querySelector('source').src = `/media/knnan/New Volume/Music/${titleref.innerText}.mp3`;
+        player.querySelector('source').src = `/media/knnan/F/Music/${titleref.innerText}.mp3`;
         player.load();
         player.play();
     }

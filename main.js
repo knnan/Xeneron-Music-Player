@@ -3,111 +3,88 @@ const { app, BrowserWindow, Menu } = require('electron')
 const path = require('path')
 const url = require('url')
 const fs = require('fs')
+const util = require('util');
 const mm = require('music-metadata')
+const { ipcMain } = require('electron')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
+
+
+const readdirPromise = util.promisify(fs.readdir)
 let mainWindow;
 console.log('started the process');
-async function parseFiles ()
+
+
+
+
+
+
+ipcMain.on('asynchronous-message', (event, arg) =>
 {
-  try
-  {
-    console.time("jskdl");
-    Taginfos = []
-    pictures = []
-    let audioFiles = []
-    fs.readdirSync('/media/knnan/New Volume/Music/').forEach(file =>
-    {
-      if (path.parse(file).ext === '.mp3')
-      {
-        // console.log(file);
-        str1 = '/media/knnan/New Volume/Music/' + String(file)
-        audioFiles.push(str1)
-      }
-    });
-    // console.log(audioFiles);
+	parseFilesPromise(event, arg);
+})
 
-    metadata = [];
-    count = 0;
-    for (const audioFile of audioFiles)
-    {
 
-      // await will ensure the metadata parsing is completed before we move on to the next file
-      metadata = await mm.parseFile(audioFile);
-      // console.log(metadata.common.title)
-      metadata.common.picture[ 0 ].data = metadata.common.picture[ 0 ].data.toString('base64');
-      Taginfos.push(metadata);
-      // music_text += `${metadata.common.title} - ${metadata.common.artist}\n`;
-      // console.log(music_text);
-      // pictures.push(metadata.common.picture)
-      // Do great things with the metadata
-    }
-    console.timeEnd("jskdl");
 
-    console.log("Total files parsed = ", Taginfos.length);
-    console.log("this is the result      ", Taginfos[ 0 ].common.title);
-    return Taginfos;
-  }
-  catch (error)
-  {
-    console.log(error);
-  }
+async function parseFilesPromise (event, arg)
+{
+	try
+	{
+		let audioFiles = await readdirPromise('/media/knnan/F/Music/');
+		for (const audioFile of audioFiles)
+		{
+			if (path.parse(audioFile).ext === '.mp3')
+			{
+				filepath = '/media/knnan/F/Music/' + String(audioFile);
+				metadata = await mm.parseFile(filepath);
+				metadata.common.picture[ 0 ].data = metadata.common.picture[ 0 ].data.toString('base64');
+				event.reply('asynchronous-reply', metadata);
+			}
+		}
+
+	} catch (error)
+	{
+		console.log(error);
+	}
 }
 
 
 
 
-// parseFiles();
 function createWindow ()
 {
-  // Create the browser window.
-  mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
-    webPreferences: {
-      nodeIntegration: true,
+	// Create the browser window.
+	mainWindow = new BrowserWindow({
+		width: 800,
+		height: 600,
+		webPreferences: {
+			nodeIntegration: true,
 
-      preload: path.join(__dirname, 'preload.js')
-    }
-  })
+			preload: path.join(__dirname, 'preload.js')
+		}
+	})
 
-  // and load the index.html of the app.
+	// and load the index.html of the app.
 
-  mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'mainWindow.html'),
-    protocol: 'file:',
-    slashes: true
-  }));
+	mainWindow.loadURL(url.format({
+		pathname: path.join(__dirname, 'mainWindow.html'),
+		protocol: 'file:',
+		slashes: true
+	}));
 
-  // mainWindow.webContents.openDevTools()
-  mainWindow.webContents.on('did-finish-load', () =>
-  {
-    console.log("printing the result");
-    let result = parseFiles();
-    result.then((data) =>
-    {
-
-      // console.log("final result si        -------------------------- ", result);
-      mainWindow.webContents.send('secretmessage', data);
-    });
-
-  })
-
-  const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
-  Menu.setApplicationMenu(mainMenu);
+	// mainWindow.webContents.openDevTools()
 
 
-  // Open the DevTools.
+	const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
 
-  // Emitted when the window is closed.
-  mainWindow.on('closed', function ()
-  {
-    // Dereference the window object, usually you would store windows
-    // in an array if your app supports multi windows, this is the time
-    // when you should delete the corresponding element.
-    mainWindow = null
-  })
+	mainWindow.on('closed', function ()
+	{
+		// Dereference the window object, usually you would store windows
+		// in an array if your app supports multi windows, this is the time
+		// when you should delete the corresponding element.
+		mainWindow = null
+	})
 }
 
 
@@ -115,25 +92,25 @@ function createWindow ()
 
 
 const mainMenuTemplate = [
-  {
-    label: 'File',
-    submenu: [
-      {
-        label: 'Add Item'
-      },
-      {
-        label: 'ClearItem'
-      },
-      {
-        label: 'Quit',
-        accelerator: process.platform == 'darwin' ? 'Command+Q' : 'Ctrl+Q',
-        click ()
-        {
-          app.quit();
-        }
-      }
-    ]
-  } ];
+	{
+		label: 'File',
+		submenu: [
+			{
+				label: 'Add Item'
+			},
+			{
+				label: 'ClearItem'
+			},
+			{
+				label: 'Quit',
+				accelerator: process.platform == 'darwin' ? 'Command+Q' : 'Ctrl+Q',
+				click ()
+				{
+					app.quit();
+				}
+			}
+		]
+	} ];
 
 
 
@@ -145,16 +122,16 @@ app.on('ready', createWindow)
 // Quit when all windows are closed.
 app.on('window-all-closed', function ()
 {
-  // On macOS it is common for applications and their menu bar
-  // to stay active until the user quits explicitly with Cmd + Q
-  if (process.platform !== 'darwin') app.quit()
+	// On macOS it is common for applications and their menu bar
+	// to stay active until the user quits explicitly with Cmd + Q
+	if (process.platform !== 'darwin') app.quit()
 })
 
 app.on('activate', function ()
 {
-  // On macOS it's common to re-create a window in the app when the
-  // dock icon is clicked and there are no other windows open.
-  if (mainWindow === null) createWindow()
+	// On macOS it's common to re-create a window in the app when the
+	// dock icon is clicked and there are no other windows open.
+	if (mainWindow === null) createWindow()
 })
 
 // In this file you can include the rest of your app's specific main process
