@@ -1,0 +1,235 @@
+{
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "aeschli.vscode-css-formatter"
+    },
+    "[go]": {
+        "editor.formatOnSave": true
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[php]": {
+        "editor.defaultFormatter": "junstyle.php-cs-fixer"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python"
+    },
+    "[rust]": {
+        "editor.defaultFormatter": "rust-lang.rust"
+    },
+    "[sql]": {
+        "editor.defaultFormatter": "bradymholt.pgformatter"
+    },
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "alignment.surroundSpace": {
+        "arrow": [
+            1,
+            1
+        ],
+        "assignment": [
+            1,
+            1
+        ],
+        "colon": [
+            1,
+            1
+        ],
+        "comment": 2
+    },
+    "breadcrumbs.enabled": true,
+    "C_Cpp.intelliSenseCacheSize": 1120,
+    "code-runner.clearPreviousOutput": true,
+    "code-runner.customCommand": "clear",
+    "code-runner.executorMap": {
+        // "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt.out && $dir$fileNameWithoutExt.out",
+        "cpp": "cd $dir && run $fileName "
+    },
+    "code-runner.executorMapByFileExtension": {
+        ".pde": "cd $dir && processing-java --force --sketch=$dirWithoutTrailingSlash --run"
+    },
+    "code-runner.runInTerminal": true,
+    "code-runner.saveFileBeforeRun": true,
+    "codestream.email": "kiran.yadav@gopoolit.com",
+    "debug.allowBreakpointsEverywhere": true,
+    "diffEditor.renderSideBySide": false,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "editor.cursorBlinking": "smooth",
+    "editor.fontFamily": "'Iosevka Nerd Font Mono','Hack','Courier New'",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 13.5,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveTimeout": 5000,
+    "editor.formatOnType": true,
+    "editor.lineHeight": 20,
+    "editor.linkedEditing": true,
+    "editor.minimap.enabled": false,
+    "editor.mouseWheelScrollSensitivity": 1,
+    "editor.mouseWheelZoom": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.quickSuggestions": {
+        "comments": true
+    },
+    "editor.quickSuggestionsDelay": 10,
+    "editor.renameOnType": true,
+    "editor.semanticTokenColorCustomizations": {
+        "enabled": true
+    },
+    "editor.smoothScrolling": true,
+    "editor.snippetSuggestions": "top",
+    "editor.suggestSelection": "first",
+    "editor.tabSize": 4,
+    "editor.tokenColorCustomizations": {
+        "[Community Material Theme Ocean High Contrast]": {
+            "textMateRules": [
+                {
+                    "scope": [
+                        "variable.other.local"
+                    ],
+                    "settings": {
+                        "foreground": "#baff92"
+                    }
+                }
+            ]
+        }
+    },
+    "editor.wordWrap": "on",
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    },
+    "emmet.triggerExpansionOnTab": true,
+    "eslint.alwaysShowStatus": true,
+    "eslint.format.enable": true,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "extensions.closeExtensionDetailsOnViewChange": true,
+    "files.associations": {
+        "*.sh": "shellscript"
+    },
+    "files.autoSave": "onFocusChange",
+    "files.exclude": {
+        "**/.tmp.*": true,
+        "**/*.class": true,
+        "**/*.exe": true,
+        "**/*.out": true
+    },
+    "files.insertFinalNewline": true,
+    "files.simpleDialog.enable": true,
+    "files.trimTrailingWhitespace": false,
+    "git.confirmSync": false,
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": true
+    },
+    "go.autocompleteUnimportedPackages": true,
+    "go.docsTool": "gogetdoc",
+    "html.format.indentHandlebars": true,
+    "html.format.indentInnerHtml": true,
+    "javascript.format.insertSpaceAfterConstructor": true,
+    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
+    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": true,
+    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true,
+    "javascript.preferences.quoteStyle": "double",
+    "javascript.referencesCodeLens.enabled": true,
+    "javascript.referencesCodeLens.showOnAllFunctions": true,
+    "javascript.suggest.completeFunctionCalls": true,
+    "jupyter.askForKernelRestart": false,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "liveServer.settings.multiRootWorkspaceName": "",
+    "liveServer.settings.port": 8000,
+    "material-icon-theme.folders.color": "#7cb342",
+    "material-icon-theme.folders.theme": "specific",
+    "material-icon-theme.showWelcomeMessage": false,
+    "oneDarkPro.bold": true,
+    "oneDarkPro.italic": false,
+    "oneDarkPro.markdownStyle": false,
+    "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
+    "php-cs-fixer.lastDownload": 1608615135552,
+    "python.formatting.blackArgs": [
+        "--line-length",
+        "200"
+    ],
+    "python.formatting.provider": "black",
+    "python.languageServer": "Microsoft",
+    "python.pythonPath": "/usr/bin/python3",
+    "rest-client.enableCustomVariableReferencesCodeLens": false,
+    "rest-client.fontSize": 13,
+    "shellcheck.disableVersionCheck": true,
+    "sync.autoDownload": false,
+    "sync.autoUpload": true,
+    "sync.forceUpload": false,
+    "sync.gist": "208c2d6c691ca2e0abe07cc5027bdcec",
+    "sync.quietSync": true,
+    "terminal.explorerKind": "external",
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.enableBell": true,
+    "terminal.integrated.fontFamily": "Menlo for Powerline",
+    "terminal.integrated.fontSize": 9,
+    "terminal.integrated.lineHeight": 1.2,
+    "terminal.integrated.rendererType": "dom",
+    "terminal.integrated.rightClickBehavior": "selectWord",
+    "terminal.integrated.shell.linux": "/usr/bin/zsh",
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
+    "terminal.integrated.showExitAlert": false,
+    "todo-tree.tree.showScanModeButton": false,
+    "typescript.format.placeOpenBraceOnNewLineForControlBlocks": true,
+    "window.closeWhenEmpty": false,
+    "window.menuBarVisibility": "default",
+    "window.restoreFullscreen": false,
+    "window.titleBarStyle": "custom",
+    "workbench.activityBar.visible": false,
+    "workbench.colorCustomizations": {
+        "terminal.ansiBlack": "#151010",
+        "terminal.ansiBlue": "#5b46d1",
+        "terminal.ansiBrightBlack": "#818383",
+        "terminal.ansiBrightBlue": "#a798e7",
+        "terminal.ansiBrightCyan": "#14f0f0",
+        "terminal.ansiBrightGreen": "#31e722",
+        "terminal.ansiBrightMagenta": "#f935f8",
+        "terminal.ansiBrightRed": "#fc391f",
+        "terminal.ansiBrightWhite": "#e9ebeb",
+        "terminal.ansiBrightYellow": "#eaec23",
+        "terminal.ansiCyan": "#33bbc8",
+        "terminal.ansiGreen": "#84e184",
+        "terminal.ansiMagenta": "#d338d3",
+        "terminal.ansiRed": "#df554b",
+        "terminal.ansiWhite": "#cbcccd",
+        "terminal.ansiYellow": "#6bcf72",
+        "terminal.background": "#0F111A",
+        "terminal.foreground": "#93e659"
+    },
+    "workbench.colorTheme": "Community Material Theme Ocean High Contrast",
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.editor.pinnedTabSizing": "shrink",
+    "workbench.editor.revealIfOpen": true,
+    "workbench.editorAssociations": [
+        {
+            "filenamePattern": "*.ipynb",
+            "viewType": "jupyter.notebook.ipynb"
+        }
+    ],
+    "workbench.iconTheme": "field-lights-monochrome-minimalistic",
+    "workbench.settings.openDefaultKeybindings": true,
+    "workbench.settings.openDefaultSettings": true,
+    "workbench.settings.useSplitJSON": true,
+    "workbench.startupEditor": "none",
+    "workbench.tree.indent": 12,
+    "python.showStartPage": false
+}
